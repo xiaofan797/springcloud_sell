@@ -1,4 +1,4 @@
-package com.xiaofan.sell.order.Service;
+package com.xiaofan.sell.order.service;
 
 import com.xiaofan.sell.order.dto.OrderDTO;
 
