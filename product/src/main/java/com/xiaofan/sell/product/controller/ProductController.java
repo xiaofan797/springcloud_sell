@@ -4,7 +4,7 @@ import com.xiaofan.sell.product.pojo.ProductCategory;
 import com.xiaofan.sell.product.pojo.ProductInfo;
 import com.xiaofan.sell.product.service.ProductCategoryService;
 import com.xiaofan.sell.product.service.ProductInfoService;
-import com.xiaofan.sell.product.util.ResultVOUtil;
+import com.xiaofan.sell.product.utils.ResultVOUtil;
 import com.xiaofan.sell.product.vo.ProductInfoVo;
 import com.xiaofan.sell.product.vo.ProductVO;
 import com.xiaofan.sell.product.vo.ResultVO;

@@ -10,6 +10,7 @@
         <module>eurekaserver</module>
         <module>product</module>
         <module>order</module>
+        <module>sell-api</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -58,6 +59,13 @@
     </dependencyManagement>
 
     <build>
+        <finalName>springcloud-sell</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
