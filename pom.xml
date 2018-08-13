@@ -9,6 +9,7 @@
     <modules>
         <module>eurekaserver</module>
         <module>product</module>
+        <module>order</module>
     </modules>
     <packaging>pom</packaging>
 
