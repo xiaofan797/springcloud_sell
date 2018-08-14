@@ -1,18 +1,16 @@
 package com.xiaofan.sell.product.controller;
 
 import com.xiaofan.sell.product.pojo.ProductCategory;
-import com.xiaofan.sell.product.pojo.ProductInfo;
+import com.xiaofan.sell.api.pojo.ProductInfo;
 import com.xiaofan.sell.product.service.ProductCategoryService;
 import com.xiaofan.sell.product.service.ProductInfoService;
-import com.xiaofan.sell.product.utils.ResultVOUtil;
+import com.xiaofan.sell.api.utils.ResultVOUtil;
 import com.xiaofan.sell.product.vo.ProductInfoVo;
 import com.xiaofan.sell.product.vo.ProductVO;
-import com.xiaofan.sell.product.vo.ResultVO;
+import com.xiaofan.sell.api.vo.ResultVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +25,10 @@ public class ProductController {
     @Autowired
     private ProductInfoService productInfoService;
 
+    /**
+     * 查找商品信息
+     * @return
+     */
     @GetMapping("/list")
     public ResultVO list(){
         //1.获取所有的分类信息
@@ -54,5 +56,12 @@ public class ProductController {
             productVOList.add(productVO);
         }
         return ResultVOUtil.success(productVOList);
+    }
+    /**
+     *
+     */
+    @PostMapping("/listForOrder")
+    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
+        return productInfoService.findByProductIds(productIdList);
     }
 }

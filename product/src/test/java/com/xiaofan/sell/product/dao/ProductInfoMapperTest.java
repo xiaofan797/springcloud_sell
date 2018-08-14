@@ -1,12 +1,13 @@
 package com.xiaofan.sell.product.dao;
 
-import com.xiaofan.sell.product.pojo.ProductInfo;
+import com.xiaofan.sell.api.pojo.ProductInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,10 +21,11 @@ public class ProductInfoMapperTest {
     ProductInfoMapper productInfoMapper;
 
     @Test
-    public void findByTypes() {
+    public void findList() {
         ProductInfo productInfo = new ProductInfo();
         productInfo.setProductStatus((byte)0);
-        List<ProductInfo> productInfoList = productInfoMapper.findByTypes(Arrays.asList(11),productInfo);
+        List<ProductInfo> productInfoList = productInfoMapper.findList(null,
+                Arrays.asList("157875196366160022","157875227953464068"),productInfo);
         System.out.println(productInfoList);
     }
 }

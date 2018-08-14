@@ -11,6 +11,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -30,6 +32,7 @@ public class OrderServiceImpl implements OrderService {
         orderMaster.setOrderId(orderId);
         orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());
         orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
+        orderMaster.setOrderAmount(new BigDecimal(66.66));
         orderMasterMapper.add(orderMaster);
         orderDTO.setOrderId(orderId);
         return orderDTO;

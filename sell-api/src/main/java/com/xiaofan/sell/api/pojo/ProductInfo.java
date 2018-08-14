@@ -1,4 +1,4 @@
-package com.xiaofan.sell.product.pojo;
+package com.xiaofan.sell.api.pojo;
 
 import lombok.Data;
 

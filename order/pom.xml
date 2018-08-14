@@ -50,6 +50,12 @@
             <version>1.18.2</version>
             <scope>provided</scope>
         </dependency>
+        <!--引入feign调用-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>1.4.4.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>

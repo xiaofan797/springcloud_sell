@@ -1,6 +1,6 @@
 package com.xiaofan.sell.product.dao;
 
-import com.xiaofan.sell.product.pojo.ProductInfo;
+import com.xiaofan.sell.api.pojo.ProductInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -16,7 +16,9 @@ public interface ProductInfoMapper {
 
     ProductInfo findById(String productId);
 
-    List<ProductInfo> findByTypes(@Param("typesList") List<Integer> typesList,@Param("product")ProductInfo productInfo);
+    List<ProductInfo> findList(@Param("typesList") List<Integer> typesList,//分类ID批量查询
+                                  @Param("productIdList") List<String> productIdList,//产品ID批量查询
+                                  @Param("product")ProductInfo productInfo);//产品条件
 
     int updateByPrimaryKeySelective(ProductInfo record);
 
