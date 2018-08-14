@@ -129,7 +129,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaofan.sell.api.pojo.ProductInfo" >
+  <update id="update" parameterType="com.xiaofan.sell.api.pojo.ProductInfo" >
     update product_info
     <set >
       <if test="productName != null" >

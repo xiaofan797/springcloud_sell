@@ -20,7 +20,7 @@ public interface ProductInfoMapper {
                                   @Param("productIdList") List<String> productIdList,//产品ID批量查询
                                   @Param("product")ProductInfo productInfo);//产品条件
 
-    int updateByPrimaryKeySelective(ProductInfo record);
+    int update(ProductInfo record);
 
     int updateByPrimaryKey(ProductInfo record);
 }

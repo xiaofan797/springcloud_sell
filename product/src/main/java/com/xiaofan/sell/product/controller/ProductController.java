@@ -1,5 +1,6 @@
 package com.xiaofan.sell.product.controller;
 
+import com.xiaofan.sell.product.dto.CartDTO;
 import com.xiaofan.sell.product.pojo.ProductCategory;
 import com.xiaofan.sell.api.pojo.ProductInfo;
 import com.xiaofan.sell.product.service.ProductCategoryService;
@@ -58,10 +59,19 @@ public class ProductController {
         return ResultVOUtil.success(productVOList);
     }
     /**
-     *
+     *  查找商品信息
      */
     @PostMapping("/listForOrder")
     public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
         return productInfoService.findByProductIds(productIdList);
     }
+    /**
+     * 扣减库存
+     */
+    @PostMapping("/decrStock")
+    public String decrStock(@RequestBody List<CartDTO> cartDTOList){
+         productInfoService.decrStock(cartDTOList);
+         return "ok";
+    }
+
 }
