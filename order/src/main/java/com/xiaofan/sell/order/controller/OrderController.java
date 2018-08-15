@@ -4,6 +4,7 @@ import com.xiaofan.sell.api.utils.ResultVOUtil;
 import com.xiaofan.sell.api.vo.ResultVO;
 import com.xiaofan.sell.order.client.ProductClient;
 import com.xiaofan.sell.order.converter.OrderForm2OrderDTOConverter;
+import com.xiaofan.sell.order.dto.CartDTO;
 import com.xiaofan.sell.order.dto.OrderDTO;
 import com.xiaofan.sell.order.enums.ResultEnum;
 import com.xiaofan.sell.order.exception.OrderException;
@@ -59,4 +60,10 @@ public class OrderController {
     public List<ProductInfo> listForOrder(){
        return productClient.listForOrder(Arrays.asList("157875196366160022","157875227953464068"));
     }
+
+    @PostMapping("/decrStock")
+    public void decrStock(){
+         productClient.decrStock(Arrays.asList(new CartDTO("164103465734242707",2)));
+    }
+
 }
